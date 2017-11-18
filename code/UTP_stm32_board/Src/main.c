@@ -103,7 +103,11 @@ int main(void)
   /* USER CODE END WHILE */
 
   /* USER CODE BEGIN 3 */
-
+	  //uint8_t Data[20];
+	 // uint8_t size = sprintf(Data,"Wysyłamy\n");
+	 // H//AL_UART_Transmit(&huart1,Data,size,200);
+	  HAL_GPIO_TogglePin(LED10_GPIO_Port, LED10_Pin);
+	  HAL_Delay(1000);
   }
   /* USER CODE END 3 */
 
@@ -162,10 +166,10 @@ static void MX_USART1_UART_Init(void)
 {
 
   huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
+  huart1.Init.BaudRate = 9600;
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
-  huart1.Init.StopBits = UART_STOPBITS_1;
-  huart1.Init.Parity = UART_PARITY_NONE;
+  huart1.Init.StopBits = UART_STOPBITS_2;
+  huart1.Init.Parity = UART_PARITY_ODD;
   huart1.Init.Mode = UART_MODE_TX_RX;
   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
